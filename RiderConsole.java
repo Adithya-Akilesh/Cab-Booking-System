@@ -71,6 +71,7 @@ public class RiderConsole
                             case 5:
                             {
                                 System.out.println("Logging Out and Exiting");
+                                sc.close();
                                 System.exit(0);
                             }
                             default :
@@ -83,6 +84,7 @@ public class RiderConsole
                 case 3:
                 {
                     System.out.println("Exiting");
+                    sc.close();
                     System.exit(0);
                     break;
                 }

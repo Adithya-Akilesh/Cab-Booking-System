@@ -48,6 +48,7 @@ public class UserConsole
                             case 3:
                             {
                                 System.out.println("Logging Out and Exiting");
+                                sc.close();
                                 System.exit(0);
                             }
                             default :
@@ -60,6 +61,7 @@ public class UserConsole
                 case 3:
                 {
                     System.out.println("Thank You for using our service");
+                    sc.close();
                     System.exit(0);
                     break;
                 }
