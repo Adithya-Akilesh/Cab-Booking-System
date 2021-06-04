@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 public class Rider 
 {
     private String riderName;
@@ -45,8 +47,9 @@ public class Rider
     }
 
 
-    public void makeUnavailable()
+    public void makeUnavailable() throws InterruptedException
     {
+        TimeUnit.SECONDS.sleep(3);
         if(Database.vehicleDtabase.get(this.vehicleNumber) != null)
         {
             Database.vehicleDtabase.remove(this.vehicleNumber);
@@ -59,10 +62,18 @@ public class Rider
     }
 
 
-    public void makeAvailable()
+    public void makeAvailable() throws InterruptedException
     {
-        this.setDetails(latitude, longitude);
-        System.out.println("\nYou are now made AVAILABLE for Accepting Rides\n");
+        if(Database.vehicleDtabase.get(this.vehicleNumber) != null)
+        {
+            System.out.println("\nYou are Already made AVAILABLE for Accepting Rides\n");
+        }
+        else
+        {
+            TimeUnit.SECONDS.sleep(3);
+            this.setDetails(latitude, longitude);
+            System.out.println("\nYou are now made AVAILABLE for Accepting Rides\n");
+        }
     }
 
 

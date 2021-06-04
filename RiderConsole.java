@@ -1,7 +1,7 @@
 import java.util.*;
 public class RiderConsole 
 {
-    public static void main(String[] args) 
+    public static void main(String[] args) throws InterruptedException 
     {
         Scanner sc = new Scanner(System.in);
         int mainMenuChoice;
