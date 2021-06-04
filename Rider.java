@@ -35,6 +35,7 @@ public class Rider
         this.longitude = longitude;
         Database.vehicleDtabase.put(this.vehicleNumber, new Vehicle(this.vehicleNumber, this.vehicleType, this.riderName, this.riderNumber, this.latitude, this.latitude));
         System.out.println("\nDetails Set Successfully\n");
+       // this.showStatus();
     }
 
 
@@ -44,11 +45,13 @@ public class Rider
         this.longitude = longitude;
         Database.vehicleDtabase.put(this.vehicleNumber, new Vehicle(this.vehicleNumber, this.vehicleType, this.riderName, this.riderNumber, this.latitude, this.longitude) );
         System.out.println("\nUpdate Location Successfully\n");
+        //this.showStatus();
     }
 
 
     public void makeUnavailable() throws InterruptedException
     {
+        System.out.println("Please Wait...");
         TimeUnit.SECONDS.sleep(3);
         if(Database.vehicleDtabase.get(this.vehicleNumber) != null)
         {
@@ -59,6 +62,7 @@ public class Rider
         {
             System.out.println("\nYou are already UNAVAILABLE for Accepting Rides\n");
         }
+        //this.showStatus();
     }
 
 
@@ -74,6 +78,7 @@ public class Rider
             this.setDetails(latitude, longitude);
             System.out.println("\nYou are now made AVAILABLE for Accepting Rides\n");
         }
+       // this.showStatus();
     }
 
 
@@ -93,4 +98,9 @@ public class Rider
     {
         return this.riderName;
     }
+
+    // public void showStatus()
+    // {
+    //     System.out.println(Database.vehicleDtabase.get(this.vehicleNumber));
+    // }
 }
