@@ -70,6 +70,7 @@ public class RiderConsole
                             }
                             case 5:
                             {
+                                r.makeUnavailable();
                                 System.out.println("Logging Out and Exiting");
                                 sc.close();
                                 System.exit(0);
